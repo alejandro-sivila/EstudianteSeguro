@@ -1,4 +1,4 @@
-﻿namespace ApiSecureStudent.Models
+﻿namespace admStudentSecurity.Models
 {
     using System;
     using System.ComponentModel.DataAnnotations;
@@ -6,7 +6,6 @@
     public class Student
     {
         [Key]
-        [Range(1, 9999)]
         public int StudentId { get; set; }//prop + tab +tap
 
         [StringLength(30)]
@@ -16,7 +15,8 @@
         [Required(ErrorMessage = "YOU MUST ENTER THE FIELD {0}")]
         public string FirstName { get; set; }
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:DD/MM/YYYY}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime EnrollmentDate { get; set; }
     }
+
 }
